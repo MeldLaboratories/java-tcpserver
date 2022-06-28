@@ -34,6 +34,14 @@ jobs:
           ./.github/preBuild.sh
 
       # Runs a set of commands using the runners shell
+      - name: Build
+        env:
+          NEXUS_PASS: ${{ secrets.NEXUS_PASS }}
+        run: |
+          chmod +x ./.github/build.sh
+          ./.github/build.sh
+
+      # Runs a set of commands using the runners shell
       - name: Post-Build
         run: |
           chmod +x ./.github/postBuild.sh

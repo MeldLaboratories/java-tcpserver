@@ -1,5 +1,7 @@
-# no vscode, no no no
+# editor config stuff
+# ignored because it should only be intentionally updated using the -f flag
 .vscode
+.editorconfig
 
 # maven
 target/

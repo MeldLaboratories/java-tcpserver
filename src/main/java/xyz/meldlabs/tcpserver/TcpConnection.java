@@ -75,7 +75,7 @@ public class TcpConnection {
       // prepare output stream
       TcpConnection.this.outputStream = TcpConnection.this.baseSocket.getOutputStream();
 
-      while (!TcpConnection.this.baseSocket.isClosed()) {
+     while (!TcpConnection.this.baseSocket.isClosed()) {
 
         CharBuffer buffer = CharBuffer.allocate(bufferSize);
             
@@ -84,7 +84,7 @@ public class TcpConnection {
           break;
         }
 
-        byte[] data = new String(buffer.array()).getBytes();
+       byte[] data = new String(buffer.array()).getBytes();
 
         for (OnSocketDataReceived dataListener : TcpConnection.this.dataReceivedListeners) {
           dataListener.onDataReceived(TcpConnection.this, new OnSocketDataReceivedArgs(dataListener, TcpConnection.this.dataReceivedListeners, data));

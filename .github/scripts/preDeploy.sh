@@ -70,8 +70,7 @@ getNextFixVersion()
 
 }
 
-
-# Setup version informations according to the branch name.
+# BUILD RELEASE
 if [[ $GITHUB_REF == *heads/main ]]; then
 
   tag=$(getNextMinorVersion)
@@ -79,8 +78,11 @@ if [[ $GITHUB_REF == *heads/main ]]; then
   echo main branch
   echo tag: $tag
 
+  echo "VERSIONING_GIT_TAG=$tag" >> $GITHUB_ENV
   echo "VERSION_TAG=$tag" >> $GITHUB_ENV
 
+
+# BUILD FIX RELEASE
 elif [[ $GITHUB_REF == *heads/main-fix/ ]]; then
 
   tag=$(getNextFixVersion)
@@ -88,12 +90,18 @@ elif [[ $GITHUB_REF == *heads/main-fix/ ]]; then
   echo main-fix branch
   echo tag: $tag
 
+  echo "VERSIONING_GIT_TAG=$tag" >> $GITHUB_ENV
   echo "VERSION_TAG=$tag" >> $GITHUB_ENV
 
+
+# UNKNOWN BUILD TYPE
 else
 
   echo "No version tag created."
   tag=$(getNextMinorVersion)
   echo tag: $tag
+
+  echo "VERSIONING_GIT_BRANCH=$GITHUB_REF" >> $GITHUB_ENV
+  echo "VERSION_TAG=$tag" >> $GITHUB_ENV
 
 fi

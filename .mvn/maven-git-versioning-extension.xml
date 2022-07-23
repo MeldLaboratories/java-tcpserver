@@ -1,9 +1,7 @@
 <gitVersioning>
 
   <tag>
-    <pattern>
-      <![CDATA[(?<tagVersion>.+)]]>
-    </pattern>
+    <pattern><![CDATA[(?<tagVersion>.+)]]></pattern>
     <versionFormat>${tagVersion}</versionFormat>
   </tag>
 
@@ -13,23 +11,17 @@
   </branch>
 
   <branch>
-    <pattern>
-      <![CDATA[.*feature/(?<feature>.+)]]>
-    </pattern>
+    <pattern><![CDATA[.*feature/(?<feature>.+)]]></pattern>
     <versionFormat>${feature}-SNAPSHOT</versionFormat>
   </branch>
 
   <branch>
-    <pattern>
-      <![CDATA[.*rc/(?<rcVersion>.+)]]>
-    </pattern>
+    <pattern><![CDATA[.*rc/(?<rcVersion>.+)]]></pattern>
     <versionFormat>${rcVersion}-rc-SNAPSHOT</versionFormat>
   </branch>
 
   <branch>
-    <pattern>
-      <![CDATA[.*fix/(?<fixVersion>.+)]]>
-    </pattern>
+    <pattern><![CDATA[.*fix/(?<fixVersion>.+)]]></pattern>
     <versionFormat>${fixVersion}-fix-SNAPSHOT</versionFormat>
   </branch>
 

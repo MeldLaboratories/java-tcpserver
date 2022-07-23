@@ -44,4 +44,4 @@ If you create a pull request into *main*, the request will be denied.
 Please make sure to update tests as appropriate.
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+[GNU GPL 3.0](https://choosealicense.com/licenses/gpl-3.0/)
